@@ -15,7 +15,8 @@ nodo* crear_nodo(int data)
   return nuevo;
 }
 
-nodo* encontrar_nodo(nodo* inicio, int data) {
+nodo* encontrar_nodo(nodo* inicio, int data)
+{
   nodo *tmp = inicio;
   while(tmp != NULL) {
     if(tmp->data == data) return tmp;
@@ -31,12 +32,14 @@ void agregar_nodo(int data, struct nodo** pila)
   *pila = nuevo;
 }
 
-void insertar_despues_de_nodo(nodo *nodo_a_insertar_despues, nodo* nuevo_nodo) {
+void insertar_despues_de_nodo(nodo *nodo_a_insertar_despues, nodo* nuevo_nodo)
+{
   nuevo_nodo->sig = nodo_a_insertar_despues->sig;
   nodo_a_insertar_despues->sig = nuevo_nodo;
 }
 
-nodo *insertar_al_inicio(nodo **inicio, nodo *nodo_a_insertar) { // Añade un nodo al frente de la lista, eso hace la función (lo automatiza)
+nodo *insertar_al_inicio(nodo **inicio, nodo *nodo_a_insertar)
+{ // Añade un nodo al frente de la lista, eso hace la función (lo automatiza)
   nodo_a_insertar->sig = *inicio;
   *inicio = nodo_a_insertar;
   return nodo_a_insertar;
@@ -66,7 +69,8 @@ void mostrar_pila(nodo** pila) // Esto es solo para visualizarlo
 
 
 // Search algorithms
-int binary_search(int arrayp[], int element, int leftindex, int rightindex) {
+int binary_search(int arrayp[], int element, int leftindex, int rightindex)
+{
   int midpoint = leftindex + (rightindex - leftindex) / 2;
 
   if(leftindex > rightindex) return -1;
@@ -85,7 +89,8 @@ int binary_search(int arrayp[], int element, int leftindex, int rightindex) {
 }
 
 // String Manipulation
-void str_reverse(char str[]) {
+void str_reverse(char str[])
+{
     for(int i = strlen(str) - 1; i  >= 0; i--) {
     printf("%c", str[i]);
   }
@@ -124,4 +129,20 @@ int ack(int m, int n)
   if(!m) return n+1;
   if(!n) return ack(m-1, 1);
   return ack(m-1, ack(m, n-1));
+}
+
+void fizzbuzz(int n)
+{
+
+  if(n == 0) return;
+  if(n % 3 == 0)
+    printf("Fizz");
+  if(n % 5 == 0)
+    printf("Buzz");
+  if((n % 3 != 0) && (n % 5 != 0))
+    printf("%d", n);
+
+  printf("\n");
+
+  return fizzbuzz(n - 1);
 }

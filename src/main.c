@@ -44,5 +44,8 @@ int main(int argc, char* argv[]) {
   printf("\nAckerman: \n");
   printf("%i\n", ack(3, 9));
 
+  printf("\nFizzBuzz: \n");
+  fizzbuzz(15);
+
 }
 

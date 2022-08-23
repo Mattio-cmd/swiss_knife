@@ -34,3 +34,4 @@ int rollDice(void);
 
 // Fun functions
 int ack(int m, int n);
+void fizzbuzz(int n);
