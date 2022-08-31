@@ -123,6 +123,7 @@ int rollDice(void) {
     return ((rand() % 6) + 1);
 }
 
+
 // Fun functions
 int ack(int m, int n)
 {
